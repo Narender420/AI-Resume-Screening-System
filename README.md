@@ -1,40 +1,37 @@
-# AI Resume Screening System — Week 3: EDA & Visualization Strategy
+# AI Resume Screening System — Week 4: ML Model Selection & Evaluation Plan
 
-Virtual Data Science Apprentice — Python Specialist Intern (Week 3 of 4)
+Virtual Data Science Apprentice — Python Specialist Intern (Week 4 of 4)
 
 ## Overview
 
-This week's deliverable defines the exploratory data analysis (EDA) and visualization strategy for the cleaned resume dataset used in the **AI Resume Screening System**, translating visual insights into concrete modeling decisions for Week 4.
+This week's deliverable defines the machine learning model selection and evaluation plan for the **AI Resume Screening System**, covering both the resume-category classification task and the resume-to-job-description matching task.
 
 ## Objective
 
-Conceptualize an EDA process — examining data distributions, patterns, and anomalies — and describe the visualizations that will be used to communicate insights clearly, ahead of model selection.
+Create a strategic plan for selecting and evaluating ML models in Python — covering model choice criteria, evaluation metrics, and the training/validation process — to guide the execution phase of the project.
 
 ## What's in This Report
 
-- **EDA strategy overview** — a four-stage flow from loading clean data to documenting insights.
-- **Planned visualizations**, each mapped to the Python library used and the modeling decision it informs:
-  - Category distribution (bar chart) → class-imbalance handling
-  - Resume length distribution & by-category box plot (histogram/box plot) → outlier review, auxiliary features
-  - Word clouds & top-term bar charts per category → validating TF-IDF feature quality
-  - 2D cluster projection of the TF-IDF space (scatter plot, SVD/t-SNE) → expected classification difficulty
-  - Skill co-occurrence heatmap → feature redundancy
-- **Step-by-step implementation plan** for generating and documenting each chart.
-- **Anticipated challenges** — overlapping vocabulary between related categories, word-cloud precision limits, and distortion risk in dimensionality reduction.
+- **Candidate approaches** — Logistic Regression, Multinomial Naive Bayes, linear-kernel SVM, Random Forest/Gradient Boosting, and cosine similarity over embeddings for the matching sub-task, with strengths and ideal use case for each.
+- **Model selection criteria** — predictive performance, interpretability, training/inference time, robustness to a small dataset.
+- **Evaluation metrics** — macro-averaged F1 (primary), precision, recall, accuracy, and confusion matrix for classification; cosine similarity and Precision@K for matching.
+- **Training, tuning, and validation process** — stratified 80/20 split → baseline training → 5-fold cross-validation → hyperparameter tuning (Grid/RandomizedSearchCV) → final model selection → single held-out test evaluation.
+- **Overfitting risk and mitigation** — leakage-safe vectorization, cross-validation-only tuning, single final test-set touch.
+- **Practical applicability and limitations** — positions the system as a hiring decision-support aid requiring bias audits and human review before real-world use.
 
 ## Deliverable
 
 | File | Description |
 |---|---|
-| `Week3_EDA_and_Visualization_Strategy.docx` | Full EDA & visualization strategy (Word document) |
+| `Week4_ML_Model_Selection_and_Evaluation_Plan.docx` | Full model selection & evaluation plan (Word document) |
 
 ## Tech Stack
 
-Python · pandas · matplotlib · seaborn · wordcloud · scikit-learn (TruncatedSVD, t-SNE)
+Python · scikit-learn (Logistic Regression, Naive Bayes, SVM, Random Forest, GridSearchCV) · XGBoost (optional) · sentence-transformers (optional)
 
 ## Status
 
-✅ Week 3 complete — EDA and visualization strategy finalized, ready for Week 4 (ML Model Selection & Evaluation Plan).
+✅ Week 4 complete — internship deliverables finalized across all 4 weeks.
 
 ## Author
 
