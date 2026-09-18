@@ -1,38 +1,40 @@
-# AI Resume Screening System — Week 2: Data Cleaning & Transformation
+# AI Resume Screening System — Week 3: EDA & Visualization Strategy
 
-Virtual Data Science Apprentice — Python Specialist Intern (Week 2 of 4)
+Virtual Data Science Apprentice — Python Specialist Intern (Week 3 of 4)
 
 ## Overview
 
-This week's deliverable documents the data cleaning and transformation strategy for the raw resume text used in the **AI Resume Screening System**, preparing it for exploratory analysis (Week 3) and modeling (Week 4).
+This week's deliverable defines the exploratory data analysis (EDA) and visualization strategy for the cleaned resume dataset used in the **AI Resume Screening System**, translating visual insights into concrete modeling decisions for Week 4.
 
 ## Objective
 
-Draft a detailed plan for handling data inconsistencies, missing values, duplicates, outliers, and text normalization/vectorization using Python — with an emphasis on documentation and planning rather than raw code output.
+Conceptualize an EDA process — examining data distributions, patterns, and anomalies — and describe the visualizations that will be used to communicate insights clearly, ahead of model selection.
 
 ## What's in This Report
 
-- **Missing value handling** — detection and resolution strategy for empty resume text or missing category labels.
-- **Duplicate handling** — normalized-text duplicate detection and removal.
-- **Noisy text cleanup** — stripping HTML, URLs, special characters, and inconsistent casing while preserving meaningful technical tokens (e.g., "C++", "SQL").
-- **Outlier handling** — resume-length outliers and category-level rarity, flagged for review rather than blind deletion.
-- **NLP preprocessing pipeline** — tokenization → stopword removal → lemmatization → skill-term normalization.
-- **Feature engineering** — TF-IDF vectorization (primary) and optional sentence embeddings; label encoding; class-imbalance handling; scaling considerations.
-- **Anticipated challenges and solutions** — loss of meaning from aggressive cleaning, vocabulary sparsity, inconsistent skill naming, and data-leakage risk during resampling.
+- **EDA strategy overview** — a four-stage flow from loading clean data to documenting insights.
+- **Planned visualizations**, each mapped to the Python library used and the modeling decision it informs:
+  - Category distribution (bar chart) → class-imbalance handling
+  - Resume length distribution & by-category box plot (histogram/box plot) → outlier review, auxiliary features
+  - Word clouds & top-term bar charts per category → validating TF-IDF feature quality
+  - 2D cluster projection of the TF-IDF space (scatter plot, SVD/t-SNE) → expected classification difficulty
+  - Skill co-occurrence heatmap → feature redundancy
+- **Step-by-step implementation plan** for generating and documenting each chart.
+- **Anticipated challenges** — overlapping vocabulary between related categories, word-cloud precision limits, and distortion risk in dimensionality reduction.
 
 ## Deliverable
 
 | File | Description |
 |---|---|
-| `Week2_Data_Cleaning_and_Transformation.docx` | Full data cleaning & transformation strategy (Word document) |
+| `Week3_EDA_and_Visualization_Strategy.docx` | Full EDA & visualization strategy (Word document) |
 
 ## Tech Stack
 
-Python · pandas · numpy · re · nltk / spaCy · scikit-learn (TfidfVectorizer, LabelEncoder) · imbalanced-learn (optional)
+Python · pandas · matplotlib · seaborn · wordcloud · scikit-learn (TruncatedSVD, t-SNE)
 
 ## Status
 
-✅ Week 2 complete — cleaning/transformation strategy finalized, ready for Week 3 (EDA & Visualization Strategy).
+✅ Week 3 complete — EDA and visualization strategy finalized, ready for Week 4 (ML Model Selection & Evaluation Plan).
 
 ## Author
 
